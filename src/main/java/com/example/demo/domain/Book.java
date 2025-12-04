@@ -29,4 +29,3 @@ public class Book {
     @Column(name = "image_id")
     private Long imageId;          // image_id (BIGINT)
 }
-

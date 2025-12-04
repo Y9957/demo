@@ -15,4 +15,3 @@ public interface BookService {
 
     void delete(Long id);
 }
-
