@@ -101,7 +101,7 @@ public class Book {
 | 도서 삭제    | DELETE | `/api/books/delete?id={bookId}` |
 
 
-# 💬 **4. Comment 기능 상세**
+# 💬 **Comment 기능 상세**
 
 ## 💡 Comment 엔티티
 
