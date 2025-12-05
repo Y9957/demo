@@ -60,7 +60,7 @@ src
 ```
 ---
 
-##📘 **Book 기능 상세**
+## 📘 **Book 기능 상세**
 
 ### 📙 Book 엔티티
 
@@ -91,6 +91,7 @@ public class Book {
 
 
 
+
 ### 📗 Book API 목록
 | 기능       | Method | Endpoint                        |
 | -------- | ------ | ------------------------------- |
@@ -99,6 +100,8 @@ public class Book {
 | 도서 상세 조회 | GET    | `/api/books/detail?id={bookId}` |
 | 도서 수정    | PUT    | `/api/books/update`             |
 | 도서 삭제    | DELETE | `/api/books/delete?id={bookId}` |
+
+
 
 
 ## 💬 **Comment 기능 상세**
@@ -123,11 +126,13 @@ public class Comment {
     private Book book;
 }
 ```
+
 📌 특정 Book에 종속되는 댓글(ManyToOne)
 
 📌 수정/삭제 기능 포함
 
 📌 Member 기능은 팀원이 완성 후 연동 예정
+
 
 ### 💬 Comment API 목록
 
@@ -137,6 +142,7 @@ public class Comment {
 | 댓글 목록 조회 | GET    | `/api/comments/{bookId}`    |
 | 댓글 수정    | PUT    | `/api/comments/{commentId}` |
 | 댓글 삭제    | DELETE | `/api/comments/{commentId}` |
+
 
 ## 🧪 **Postman API 테스트 결과**
 
@@ -152,7 +158,8 @@ public class Comment {
 
 ✔ 삭제 후 GET 요청 시 빈 배열([]) 반환 확인
 
-모든 API가 정상적으로 동작함을 검증 완료하였습니다.
+모든 API가 정상적으로 동작함을 검증 완료하였습니다 .
+
 
 ## 🏁 **구현 완료 사항 체크리스트**
 
