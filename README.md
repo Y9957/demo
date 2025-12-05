@@ -82,6 +82,7 @@ public class Book {
 📌 조회수 자동 증가 기능 구현
 
 
+
 📗 Book API 목록
 | 기능       | Method | Endpoint                        |
 | -------- | ------ | ------------------------------- |
@@ -90,6 +91,7 @@ public class Book {
 | 도서 상세 조회 | GET    | `/api/books/detail?id={bookId}` |
 | 도서 수정    | PUT    | `/api/books/update`             |
 | 도서 삭제    | DELETE | `/api/books/delete?id={bookId}` |
+
 
 # 💬 **4. Comment 기능 상세**
 
@@ -109,9 +111,11 @@ public class Comment {
     @JoinColumn(name = "book_id")
     private Book book;
 }
-
+```
 📌 특정 Book에 종속되는 댓글(ManyToOne)
+
 📌 수정/삭제 기능 포함
+
 📌 Member 기능은 팀원이 완성 후 연동 예정
 
 💬 Comment API 목록
