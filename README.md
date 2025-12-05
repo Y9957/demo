@@ -158,6 +158,7 @@ public class Comment {
 }
 ```
 
+
 ### ✔ Response
 ```
 {
@@ -171,6 +172,7 @@ public class Comment {
   "imgUrl": "https://test-image.jpg"
 }
 ```
+
 
 ### ✅ ② 도서 상세 조회 (GET/api/books/detail?id=1)
 
@@ -188,6 +190,7 @@ public class Comment {
 }
 ```
 
+
 ### ✅ ③ 도서 수정 (PUT/api/books/update)
 
 ### ✔ Request Body
@@ -200,6 +203,7 @@ public class Comment {
   "imgUrl": "https://new-image.jpg"
 }
 ```
+
 
 ### ✔ Response
 ```
@@ -214,11 +218,14 @@ public class Comment {
   "imgUrl": "https://new-image.jpg"
 }
 ```
+
+
 ### ✅ ④ 도서 삭제 (DELETE /api/books/delete?id=1)
 
 ### ✔ Response
 ```[]
 ```
+
 
 ## 🧪 **Postman API 테스트 결과**
 
