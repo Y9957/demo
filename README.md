@@ -74,7 +74,7 @@ public class Book {
     private LocalDate updateTime;
     private String imgUrl;
 }
-
+```
 📌 imgUrl 기반 표지 이미지 관리 가능
 📌 등록/수정 날짜 자동 저장
 📌 조회수 자동 증가 기능 구현
