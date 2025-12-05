@@ -91,7 +91,7 @@ public class Book {
 
 
 
-📗 Book API 목록
+## 📗 Book API 목록
 | 기능       | Method | Endpoint                        |
 | -------- | ------ | ------------------------------- |
 | 도서 등록    | POST   | `/api/books/register`           |
@@ -129,7 +129,7 @@ public class Comment {
 
 📌 Member 기능은 팀원이 완성 후 연동 예정
 
-💬 Comment API 목록
+## 💬 Comment API 목록
 
 | 기능       | Method | Endpoint                    |
 | -------- | ------ | --------------------------- |
