@@ -19,11 +19,17 @@
 본 미션에서는 Spring Boot 기반으로 다음과 같은 기능을 구현하였습니다.
 
 ✔ Book CRUD 기능  
+
 ✔ Book DTO 분리 설계  
+
 ✔ RESTful API Controller 구성  
+
 ✔ 조회수 증가(viewCnt) 기능  
+
 ✔ imgUrl 필드 추가 및 저장  
+
 ✔ Comment CRUD 기능 확장(등록/조회/수정/삭제)  
+
 ✔ Postman을 활용한 API 단위 테스트 완료  
 
 ---
@@ -32,24 +38,22 @@
 
 src
 └── main
-├── java
-│ └── com.example.demo
-│ ├── controller
-│ │ ├── BookController.java
-│ │ └── CommentController.java
-│ ├── domain
-│ │ ├── Book.java
-│ │ └── Comment.java
-│ ├── repository
-│ │ ├── BookRepository.java
-│ │ └── CommentRepository.java
-│ └── service
-│ ├── BookService.java
-│ ├── BookServiceImpl.java
-│ ├── CommentService.java
-│ └── CommentServiceImpl.java
-└── resources
-
+    └── java
+        └── com.example.demo
+            ├── controller
+            │   ├── BookController.java
+            │   └── CommentController.java
+            ├── domain
+            │   ├── Book.java
+            │   └── Comment.java
+            ├── repository
+            │   ├── BookRepository.java
+            │   └── CommentRepository.java
+            └── service
+                ├── BookService.java
+                ├── BookServiceImpl.java
+                ├── CommentService.java
+                └── CommentServiceImpl.java
 
 ---
 
