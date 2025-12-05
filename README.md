@@ -146,7 +146,7 @@ public class Comment {
 
 ### 📘 Book API 응답
 
-✅ ① 도서 등록 (POST/api/books/register)
+### ✅ ① 도서 등록 (POST/api/books/register)
 
 ### ✔ Request Body
 ```
