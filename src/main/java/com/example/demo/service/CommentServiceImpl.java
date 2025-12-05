@@ -25,11 +25,11 @@ public class CommentServiceImpl implements CommentService {
     public Comment addComment(Long bookId , Comment comment) {
 
         Book book = bookRepository.findById(bookId)
-                .orElseThrow(() -> new RuntimeException("책을 찾을 수 없습니다 ."));
+                .orElseThrow(() -> new RuntimeException("책을 찾을 수 없습니다 . bookId= " + bookId));
 
         comment.setBook(book);
         comment.setRegTime(LocalDate.now());
-        comment.setUpdateTime(LocalDate.now());
+        comment.setUpdateTime(null);
 
         return commentRepository.save(comment);
     }
@@ -44,7 +44,7 @@ public class CommentServiceImpl implements CommentService {
     public Comment updateComment(Long commentId, Comment newData) {
 
         Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(() -> new RuntimeException("댓글을 찾을 수 없습니다."));
+                .orElseThrow(() -> new RuntimeException("댓글을 찾을 수 없습니다 . commentId= " + commentId));
 
         comment.setContent(newData.getContent());
         comment.setAuthor(newData.getAuthor());

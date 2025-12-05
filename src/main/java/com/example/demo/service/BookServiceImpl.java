@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.domain.Book;
 import com.example.demo.dto.BookDTO;
+import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.repository.BookRepository;
 import com.example.demo.repository.LikeRepository;
 
@@ -47,7 +48,7 @@ public class BookServiceImpl implements BookService {
     @Transactional
     public Book detail(Long bookId) {
         Book book = bookRepository.findById(bookId)
-                .orElseThrow(() -> new RuntimeException("책을 찾지 못했습니다."));
+                .orElseThrow(() -> new ResourceNotFoundException("책을 찾지 못했습니다. bookId= " + bookId));
 
         book.setViewCnt(book.getViewCnt() + 1);
         book.setUpdateTime(LocalDate.now()); // 조회시 업데이트 시간 갱신 여부는 선택
@@ -58,7 +59,7 @@ public class BookServiceImpl implements BookService {
     @Transactional
     public Book update(Long bookId, Book newData) {
         Book book = bookRepository.findById(bookId)
-                .orElseThrow(() -> new RuntimeException("책을 찾지 못했습니다."));
+                .orElseThrow(() -> new ResourceNotFoundException("책을 찾지 못했습니다. bookId= " + bookId));
 
         book.setTitle(newData.getTitle());
         book.setContent(newData.getContent());
