@@ -44,8 +44,6 @@ public class BookController {
         return ResponseEntity.ok(book);
     }
 
-
-
     // 도서 수정
     @PutMapping("/{bookId}")
     public ResponseEntity<Book> update(
@@ -54,13 +52,6 @@ public class BookController {
 
         Book updated = bookService.update(bookId, newData);
         return ResponseEntity.ok(updated);
-    }
-
-    // 도서 삭제
-    @DeleteMapping("/{bookId}")
-    public ResponseEntity<Void> delete(@PathVariable Long bookId) {
-        bookService.delete(bookId);
-        return ResponseEntity.noContent().build(); // 204 No Content
     }
 
     //좋아요 클릭
