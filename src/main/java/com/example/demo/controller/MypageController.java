@@ -20,7 +20,6 @@ public class MypageController {
     private final BookService bookService;
 
 
-
     // 도서 삭제
     @DeleteMapping("/{bookId}")
     public ResponseEntity<Void> delete(@PathVariable Long bookId) {
