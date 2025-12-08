@@ -17,5 +17,7 @@ public interface BookService {
 
     void delete(Long id);
 
-    boolean likeToggle(Long member_id,Long book_id);
+    boolean likeToggle(Long book_id,Long member_id);
+
+    Book updateBookCoverUrl(Long bookId, String imgUrl);
 }
