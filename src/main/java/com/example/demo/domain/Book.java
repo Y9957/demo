@@ -36,6 +36,9 @@ public class Book {
     @OneToMany(mappedBy = "book", cascade = CascadeType.REMOVE)
     private List<Likes> likes = new ArrayList<>();
 
+    @OneToMany(mappedBy = "book", cascade = CascadeType.REMOVE)
+    private List<Comment> comment = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name = "member_loginId", referencedColumnName = "login_id")
     private Member member;
