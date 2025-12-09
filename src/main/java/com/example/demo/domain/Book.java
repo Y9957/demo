@@ -1,5 +1,7 @@
 package com.example.demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
@@ -34,9 +36,11 @@ public class Book {
     private String imgUrl;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.REMOVE)
+    @JsonIgnore
     private List<Likes> likes = new ArrayList<>();
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.REMOVE)
+    @JsonManagedReference
     private List<Comment> comment = new ArrayList<>();
 
     @ManyToOne
