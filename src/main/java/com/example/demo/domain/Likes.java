@@ -30,6 +30,6 @@ public class Likes {
     private Book book;
 
     @Column(name="like_yn")
-    private Boolean like_yn;
+    private Boolean likeYn;
 
 }

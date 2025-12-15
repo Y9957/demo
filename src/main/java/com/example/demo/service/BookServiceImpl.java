@@ -53,8 +53,11 @@ public class BookServiceImpl implements BookService {
                     // 좋아요 여부 계산
                     if (finalMemberId != null) {
                         boolean liked = likeRepository
-                                .existsByMember_IdAndBook_BookId(finalMemberId , book.getBookId());
+                                .existsByMember_IdAndBook_BookIdAndLikeYnTrue(
+                                        finalMemberId, book.getBookId()
+                                );
                         dto.setLiked(liked);
+
                     } else {
                         dto.setLiked(false);
                     }
@@ -91,8 +94,11 @@ public class BookServiceImpl implements BookService {
                     // 좋아요 여부 계산
                     if (finalMemberId != null) {
                         boolean liked = likeRepository
-                                .existsByMember_IdAndBook_BookId(finalMemberId , book.getBookId());
+                                .existsByMember_IdAndBook_BookIdAndLikeYnTrue(
+                                        finalMemberId, book.getBookId()
+                                );
                         dto.setLiked(liked);
+
                     } else {
                         dto.setLiked(false);
                     }
@@ -162,7 +168,9 @@ public class BookServiceImpl implements BookService {
     @Override
     public boolean likeToggle(Long book_id,Long member_id) {
 
-        boolean exists = likeRepository.existsByMember_IdAndBook_BookId(member_id, book_id);
+        boolean exists =
+                likeRepository.existsByMember_IdAndBook_BookIdAndLikeYnTrue(member_id, book_id);
+
 
         log.info("=================");
         log.info(exists);

@@ -15,7 +15,7 @@ public interface LikeRepository extends JpaRepository<Likes,Long> {
     @Modifying
     @Transactional
     @Query("UPDATE Likes l " +
-            "SET l.like_yn = CASE WHEN l.like_yn = true THEN false ELSE true END " +
+            "SET l.likeYn = CASE WHEN l.likeYn = true THEN false ELSE true END " +
             "WHERE l.member.id = :memberId AND l.book.bookId = :bookId")
     void likeToggle(@Param("bookId") Long bookId,
                     @Param("memberId") Long memberId);
@@ -28,11 +28,18 @@ public interface LikeRepository extends JpaRepository<Likes,Long> {
     void insertLike(@Param("bookId") Long bookId,
                     @Param("memberId") Long memberId);
 
-    @Query("SELECT l.like_yn FROM Likes l WHERE l.member.id = :memberId AND l.book.bookId = :bookId")
+    @Query("""
+SELECT l.likeYn FROM Likes l
+WHERE l.member.id = :memberId
+AND l.book.bookId = :bookId
+ORDER BY l.id DESC
+""")
     Boolean findLikeYn(Long bookId, Long memberId);
 
-    boolean existsByMember_IdAndBook_BookId(Long memberId, Long bookId);
 
-    @Query("SELECT l.book FROM Likes l WHERE l.member.id = :memberId AND l.like_yn = true")
+    boolean existsByMember_IdAndBook_BookIdAndLikeYnTrue(Long memberId, Long bookId);
+
+
+    @Query("SELECT l.book FROM Likes l WHERE l.member.id = :memberId AND l.likeYn = true")
     List<Book> findLikedBooksByMemberId(@Param("memberId") Long memberId);
 }
