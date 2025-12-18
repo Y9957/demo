@@ -7,7 +7,6 @@ phases:
 
   pre_build:
     commands:
-      - echo "Gradle build start"
       - chmod +x gradlew
 
   build:
@@ -19,3 +18,4 @@ artifacts:
     - appspec.yml
     - scripts/**/*
     - build/libs/*.jar
+

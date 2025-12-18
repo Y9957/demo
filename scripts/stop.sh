@@ -1,10 +1,7 @@
 #!/bin/bash
 
-PID=$(pgrep -f bookmuseum)
+PID=$(pgrep -f 'java -jar')
 
-if [ -z "$PID" ]; then
-  echo "No running application"
-else
-  echo "Stopping application with PID $PID"
-  kill -9 $PID
+if [ -n "$PID" ]; then
+  kill -15 $PID
 fi
