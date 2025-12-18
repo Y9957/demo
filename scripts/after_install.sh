@@ -1,14 +1,26 @@
 #!/bin/bash
+set -e
 
-# Java 없으면 설치
-if ! command -v java &> /dev/null; then
+APP_DIR=/home/ec2-user/app
+
+echo "[AfterInstall] Start"
+
+# Java 설치 (없으면)
+if ! command -v java &>/dev/null; then
+  echo "Installing Java 17..."
   yum install -y java-17-amazon-corretto
 fi
 
-# 앱 디렉터리 생성 및 권한 정리
-mkdir -p /home/ec2-user/app
-chown -R ec2-user:ec2-user /home/ec2-user/app
-chmod -R 755 /home/ec2-user/app
+# 앱 디렉토리 준비
+mkdir -p $APP_DIR
+touch $APP_DIR/app.log
 
-# scripts 실행 권한 부여 (파일 존재 시점 보장)
-chmod +x /home/ec2-user/app/scripts/*.sh
+# 권한 정리 (🔥 핵심)
+chown -R ec2-user:ec2-user $APP_DIR
+chmod -R 755 $APP_DIR
+chmod 664 $APP_DIR/app.log
+
+# 스크립트 실행권한
+chmod +x $APP_DIR/scripts/*.sh
+
+echo "[AfterInstall] Done"
