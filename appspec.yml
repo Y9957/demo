@@ -7,13 +7,8 @@ files:
     overwrite: yes
 
 hooks:
-  ApplicationStop:
+  BeforeInstall:
     - location: scripts/stop.sh
-      timeout: 60
-      runas: ec2-user
-
-  AfterInstall:
-    - location: scripts/after_install.sh
       timeout: 60
       runas: ec2-user
 
@@ -26,3 +21,4 @@ hooks:
     - location: scripts/health_check.sh
       timeout: 60
       runas: ec2-user
+
